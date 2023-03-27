@@ -15,7 +15,7 @@ RUN apk --no-cache --update add privoxy ca-certificates bash && \
     mv /etc/privoxy/regression-tests.action.new /etc/privoxy/regression-tests.action && \
     sed -i'' 's/127\.0\.0\.1:8118/0\.0\.0\.0:8118/' /etc/privoxy/config && \
     sed -i'' 's/enable-edit-actions\ 0/enable-edit-actions\ 1/' /etc/privoxy/config && \
-#    sed -i'' 's/#max-client-connections/max-client-connections/' /etc/privoxy/config && \
+    sed -i'' 's/#max-client-connections/max-client-connections/' /etc/privoxy/config && \
     sed -i'' 's/accept-intercepted-requests\ 0/accept-intercepted-requests\ 1/' /etc/privoxy/config
 
 RUN chown privoxy.privoxy /etc/privoxy/*
