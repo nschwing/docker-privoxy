@@ -2,8 +2,6 @@ FROM alpine
 
 EXPOSE 8118
 
-HEALTHCHECK --interval=30s --timeout=3s CMD nc -z localhost 8118
-
 RUN apk --no-cache --update add privoxy ca-certificates bash && \
     mv /etc/privoxy/config.new /etc/privoxy/config && \
     mv /etc/privoxy/default.action.new /etc/privoxy/default.action && \
